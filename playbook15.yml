@@ -1,0 +1,21 @@
+---
+- name: Implimanting tags
+  hosts: all
+  tasks: 
+    - name: Install tree
+      apt:
+        name: tree
+        state: present
+      tags: tree_installation
+    - name: Create user
+      user:
+        name: Anil
+        password: welcome
+      tags: user_creation
+    - name: copy /etc/passwd file
+      copy:
+        src: /etc/passwd
+        dest: /tmp
+  
+
+...

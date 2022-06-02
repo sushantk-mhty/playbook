@@ -1,0 +1,10 @@
+---
+- name: Implementing loop
+  hosts: all
+  tasks:
+    - name: Install multiple software
+      apt:
+        name: ["tree","maven","git","openjdk-8-jdk"]
+        state: present
+        update_cache: no
+...

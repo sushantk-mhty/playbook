@@ -1,0 +1,16 @@
+---
+- name: Install git on both centos and ubuntu using error handing
+  hosts: all
+  tasks:
+    - block:
+      - name: Install git using apt
+        apt:
+          name: git
+          state: present
+          update_cache: yes
+      rescue:
+        - name: Intall git using yum
+          yum:
+            name: git
+            state: present
+            update_cache: yes

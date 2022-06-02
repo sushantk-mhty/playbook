@@ -1,0 +1,10 @@
+---
+- name: check tomcat9 status
+  hosts: all
+  tasks:
+    - name: check tomcat9
+      shell: service tomcat9 status
+      register: a
+    - debug: 
+       var: a
+

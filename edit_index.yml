@@ -1,0 +1,6 @@
+---
+- name: Edit the index.html
+  copy:
+    content: "AWS Devops"
+    dest: /var/www/html/index.html
+...
